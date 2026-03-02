@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
 
 const images = [
-  'https://cdn.poehali.dev/templates/creative-portfolio-ru/gallery-2.jpg',
-  'https://cdn.poehali.dev/templates/creative-portfolio-ru/gallery-1.jpg',
-  'https://cdn.poehali.dev/templates/creative-portfolio-ru/gallery-4.jpg',
-  'https://cdn.poehali.dev/templates/creative-portfolio-ru/gallery-5.jpg',
+  'https://cdn.poehali.dev/projects/dce3d4ae-f5a1-4995-a4c5-9344225a1d88/files/19fb5b7b-f5c1-4ab5-bc33-810d2548cacb.jpg',
+  'https://cdn.poehali.dev/projects/dce3d4ae-f5a1-4995-a4c5-9344225a1d88/files/6ed36d91-56b2-437b-ac2d-03653e828c4f.jpg',
+  'https://cdn.poehali.dev/projects/dce3d4ae-f5a1-4995-a4c5-9344225a1d88/files/e3983058-cd82-42df-b8a6-0bbcb5a3f5a3.jpg',
+  'https://cdn.poehali.dev/projects/dce3d4ae-f5a1-4995-a4c5-9344225a1d88/files/3ff567c4-ded8-425c-b528-cd72aaae0770.jpg',
 ];
 
 export default function HeroSection() {
@@ -22,7 +22,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="relative h-screen w-full overflow-hidden bg-white">
+    <section className="relative h-screen w-full overflow-hidden bg-stone-900">
       <div className="absolute inset-0">
         {images.map((src, index) => (
           <div
@@ -41,7 +41,7 @@ export default function HeroSection() {
         ))}
       </div>
 
-      <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/50 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent" />
 
       <div className="relative z-10 flex h-full items-center">
         <div className="container mx-auto px-8 md:px-16">
@@ -53,10 +53,10 @@ export default function HeroSection() {
                 isLoaded ? 'translate-x-0 opacity-100' : '-translate-x-8 opacity-0'
               )}
             >
-              <div className="relative h-48 w-48 overflow-hidden rounded-full border-4 border-white shadow-2xl md:h-64 md:w-64">
+              <div className="relative h-48 w-48 overflow-hidden rounded-full border-4 border-amber-400 shadow-2xl md:h-64 md:w-64">
                 <img
-                  src="https://cdn.poehali.dev/templates/creative-portfolio-ru/portrait.jpg"
-                  alt="Креативный специалист"
+                  src="https://cdn.poehali.dev/projects/dce3d4ae-f5a1-4995-a4c5-9344225a1d88/files/0ade1548-8655-42bc-8325-71971a3341df.jpg"
+                  alt="Народный умелец"
                   className="h-full w-full object-cover"
                 />
               </div>
@@ -70,12 +70,29 @@ export default function HeroSection() {
             >
               <div className="space-y-4">
                 <p className="text-3xl font-light text-white md:text-4xl lg:text-5xl">
-                  Алексей Иванов
+                  Мастерская народных умельцев
                 </p>
-                <p className="text-xl font-light text-white/80 md:text-2xl">
-                  Креативный директор | Дизайнер
+                <p className="text-xl font-light text-amber-300 md:text-2xl">
+                  Ручная работа · Традиционные ремёсла · С душой
                 </p>
-                <div className="flex gap-6 pt-4">
+                <p className="text-base text-white/70 max-w-md leading-relaxed">
+                  Создаём изделия, в которые вложено сердце. Роспись, резьба, вышивка, гончарство — живые традиции в современном мире.
+                </p>
+                <div className="flex flex-wrap gap-4 pt-4">
+                  <a
+                    href="#"
+                    className="inline-flex items-center gap-2 rounded-none border border-amber-400 px-6 py-3 text-sm font-medium text-amber-400 transition-all hover:bg-amber-400 hover:text-black"
+                  >
+                    Смотреть работы
+                  </a>
+                  <a
+                    href="#"
+                    className="inline-flex items-center gap-2 rounded-none bg-amber-400 px-6 py-3 text-sm font-medium text-black transition-all hover:bg-amber-300"
+                  >
+                    Связаться с мастером
+                  </a>
+                </div>
+                <div className="flex gap-6 pt-2">
                   <a
                     href="https://t.me/"
                     target="_blank"
@@ -138,7 +155,7 @@ export default function HeroSection() {
             onClick={() => setCurrentIndex(index)}
             className={cn(
               'h-1 transition-all duration-300',
-              currentIndex === index ? 'w-12 bg-white' : 'w-8 bg-white/40 hover:bg-white/60'
+              currentIndex === index ? 'w-12 bg-amber-400' : 'w-8 bg-white/40 hover:bg-white/60'
             )}
             aria-label={`Перейти к слайду ${index + 1}`}
           />
